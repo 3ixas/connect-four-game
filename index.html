@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A dynamic and interactive Connect Four game built with HTML, SCSS, and TypeScript.">
+  <title>Connect Four</title>
+</head>
+<body>
+  <!-- Main container for the Connect Four game. Acts as the central container for the entire game layout. Ensures all elements are grouped and can be styled or repositioned easily.-->
+  <div id="connect-four">
+    
+    <!-- Header Section. Contains the game's title (header__title) and description (header__description). -->
+    <header class="header">
+      <h1 class="header__title">Connect Four</h1>
+      <p class="header__description">A classic strategy game for two players. Connect four pieces of the same colour in a row to win!</p>
+    </header>
+
+    <!-- Game board section. Placeholder for the actual game board. Kept very minimal as the game board will be dynamically generated through TypeScript. -->
+     <main class="game">
+      <div class="game__board" id="game-board">
+        <!-- The game board grid will be dynamically generated through TypeScript -->
+      </div>
+     </main>
+
+     <!-- Game controls section. Will have the current player info and restart button displayed here -->
+     <section class="controls">
+      <div class="controls__player-info" id="player-info">
+        <p>Player 1's Turn</p>
+      </div>
+      <button class="controls__restart-btn" id="restart-btn">Restart Game</button>
+     </section>
+
+     <!-- Placeholder at the moment for potential addition of credits or links -->
+     <footer class="footer">
+      <p>Created by Elias</p>
+     </footer>
+
+  </div>
+</body>
+</html>
