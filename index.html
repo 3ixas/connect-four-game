@@ -18,8 +18,70 @@
 
     <!-- Game board section. Placeholder for the actual game board. Kept very minimal as the game board will be dynamically generated through TypeScript. -->
      <main class="game">
+      <!-- The game board grid will be dynamically generated through TypeScript -->
       <div class="game__board" id="game-board">
-        <!-- The game board grid will be dynamically generated through TypeScript -->
+
+        <!-- 'row' = represents a single row on the game board. 'cell' = represents a single slot in the row for a player piece. 'data-row' & 'data-col' = act as labels for the cells, making it easy to find and work with them for the game logic - i.e. checking if four pieces in a row have the same value etc. -->
+        <div class="row" id="row-1">
+          <div class="cell" id="cell-1-1" data-row="1" data-col="1"></div>
+          <div class="cell" id="cell-1-2" data-row="1" data-col="2"></div>
+          <div class="cell" id="cell-1-3" data-row="1" data-col="3"></div>
+          <div class="cell" id="cell-1-4" data-row="1" data-col="4"></div>
+          <div class="cell" id="cell-1-5" data-row="1" data-col="5"></div>
+          <div class="cell" id="cell-1-6" data-row="1" data-col="6"></div>
+          <div class="cell" id="cell-1-7" data-row="1" data-col="7"></div>
+        </div>
+
+        <div class="row" id="row-2">
+          <div class="cell" id="cell-2-1" data-row="2" data-col="1"></div>
+          <div class="cell" id="cell-2-2" data-row="2" data-col="2"></div>
+          <div class="cell" id="cell-2-3" data-row="2" data-col="3"></div>
+          <div class="cell" id="cell-2-4" data-row="2" data-col="4"></div>
+          <div class="cell" id="cell-2-5" data-row="2" data-col="5"></div>
+          <div class="cell" id="cell-2-6" data-row="2" data-col="6"></div>
+          <div class="cell" id="cell-2-7" data-row="2" data-col="7"></div>
+        </div>
+
+        <div class="row" id="row-3">
+          <div class="cell" id="cell-3-1" data-row="3" data-col="1"></div>
+          <div class="cell" id="cell-3-2" data-row="3" data-col="2"></div>
+          <div class="cell" id="cell-3-3" data-row="3" data-col="3"></div>
+          <div class="cell" id="cell-3-4" data-row="3" data-col="4"></div>
+          <div class="cell" id="cell-3-5" data-row="3" data-col="5"></div>
+          <div class="cell" id="cell-3-6" data-row="3" data-col="6"></div>
+          <div class="cell" id="cell-3-7" data-row="3" data-col="7"></div>
+        </div>
+
+        <div class="row" id="row-4">
+          <div class="cell" id="cell-4-1" data-row="4" data-col="1"></div>
+          <div class="cell" id="cell-4-2" data-row="4" data-col="2"></div>
+          <div class="cell" id="cell-4-3" data-row="4" data-col="3"></div>
+          <div class="cell" id="cell-4-4" data-row="4" data-col="4"></div>
+          <div class="cell" id="cell-4-5" data-row="4" data-col="5"></div>
+          <div class="cell" id="cell-4-6" data-row="4" data-col="6"></div>
+          <div class="cell" id="cell-4-7" data-row="4" data-col="7"></div>
+        </div>
+
+        <div class="row" id="row-5">
+          <div class="cell" id="cell-5-1" data-row="5" data-col="1"></div>
+          <div class="cell" id="cell-5-2" data-row="5" data-col="2"></div>
+          <div class="cell" id="cell-5-3" data-row="5" data-col="3"></div>
+          <div class="cell" id="cell-5-4" data-row="5" data-col="4"></div>
+          <div class="cell" id="cell-5-5" data-row="5" data-col="5"></div>
+          <div class="cell" id="cell-5-6" data-row="5" data-col="6"></div>
+          <div class="cell" id="cell-5-7" data-row="5" data-col="7"></div>
+        </div>
+
+        <div class="row" id="row-6">
+          <div class="cell" id="cell-6-1" data-row="6" data-col="1"></div>
+          <div class="cell" id="cell-6-2" data-row="6" data-col="2"></div>
+          <div class="cell" id="cell-6-3" data-row="6" data-col="3"></div>
+          <div class="cell" id="cell-6-4" data-row="6" data-col="4"></div>
+          <div class="cell" id="cell-6-5" data-row="6" data-col="5"></div>
+          <div class="cell" id="cell-6-6" data-row="6" data-col="6"></div>
+          <div class="cell" id="cell-6-7" data-row="6" data-col="7"></div>
+        </div>
+
       </div>
      </main>
 
