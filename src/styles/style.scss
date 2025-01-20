@@ -22,3 +22,31 @@
     // Add a subtle shadow inside the cell for a 3D effect
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+// Tablet styling: larger grid and spacing
+@media (min-width: 768px) {
+    #game-board {
+        grid-template-columns: repeat(7, 60px); // Increasing the cell size
+        grid-gap: 8px; // More spacing between cells
+    }
+
+    .cell {
+        width: 60px; // Increasing cell width
+        height: 60px; // Increasing cell height
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); // Slightly stronger shadow
+    }
+}
+
+// Desktop layout: Even larger grid and spacing
+@media (min-width: 1024px) {
+    #game-board {
+        grid-template-columns: repeat(7, 80px); // Increase the cell size further
+        grid-gap: 10px; // Even more spacing between cells
+    }
+
+    .cell {
+        width: 80px; // larger cells for desktop
+        height: 80px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
