@@ -1,50 +1,24 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-}
-
-#game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 500px;
-}
-
-#board {
+// Mobile-first styling
+#game-board {
     display: grid;
-    grid-template-columns: repeat(7, 50px);
-    grid-template-rows: repeat(6, 50px);
-    gap: 5px;
-    margin: 20px 0;
+    // 7 equal columns that are 40px wide
+    grid-template-columns: repeat(7, 40px);
+    grid-gap: 5px;
+    // Horizontally centre the grid within its container
+    justify-content: center;
+    // Remove any default browser margins and centre the grid
+    margin: 0 auto;
 }
 
 .cell {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: lightgrey;
     border-radius: 50%;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-#player-turn {
-    margin: 15px;
-    font-size: 18px;
-}
-
-#restart-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#restart-button:hover {
-    background-color: #0056b3;
+    // Using flex to centre the player pieces inside the cell
+    display: flex;
+    justify-content: center; // Horizontally align the content
+    align-items: center; // Vertically align the content
+    // Add a subtle shadow inside the cell for a 3D effect
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
