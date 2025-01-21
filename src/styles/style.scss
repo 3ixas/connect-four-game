@@ -50,3 +50,54 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 }
+
+// Styling for the controls section with mobile-first design approach
+.controls {
+    display: flex; // Flexbox for aligning horizontally
+    flex-direction: column; // Stacks items vertically for mobile
+    align-items: center; // Aligns content to the centre
+    margin-top: 20px; // Adds spacing between the controls and the game board
+}
+
+// Styling for the player turn indicator
+#turn-indicator {
+    font-size: 18px; // Makes the text more readable on mobile
+    font-weight: bold; // Puts emphasis on the turn indicator
+    margin-bottom: 10px; // Adds space between the text and the restart button
+    color: #007bff; // Default color for player 1
+}
+
+// Styling for the restart button
+#restart-btn {
+    padding: 10px 20px; // Adds extra padding to make it more clickable
+    font-size: 16px; // Makes the text more readable
+    font-weight: bold; // Emphasises the button
+    background-color: #ff4d4d; // Bright red background for emphasis
+    color: white; // Contrasts the text against the red background for better readability
+    border: none; // Cleaner look with no border
+    border-radius: 5px; // Rounded corners
+    cursor: pointer; // Cursor will change to a pointer when hovering over to make it more obvious that it is a button
+    transition: background-color 0.3s ease; // Should add an effect when hovering over
+}
+
+// Styling for the state of the button when hovering over
+#restart-btn:hover {
+    background-color: #e63939; // Slightly darkens the red background when hovering over
+} 
+
+// Styling for tablet and desktop for the controls
+@media (min-width: 768px) {
+    .controls {
+        flex-direction: row; // Arranges the  controls horizontally as there is more width than mobile
+        justify-content: space-between; // Adds space between the Player indicator and restart button
+        margin-top: 30px;
+    }
+
+    #turn-indicator {
+        font-size: 20px; // Increasing the font for the larger screen sizing
+    }
+
+    #restart-btn {
+        font-size: 18px; // Increasing the font for the larger screen sizing
+    }
+}
