@@ -92,6 +92,78 @@ function handleCellClick(event: MouseEvent): void {
     }
 }
 
+function checkWin(): boolean {
+    // Checking for a horizontal, vertical, and diagonal win
+    return checkHorizontal() || checkVertical() || checkDiagonal();
+}
+
+function checkHorizontal(): boolean {
+    for (let row = 0; row < board.length; row++) {
+        for (let col = 0; col < board[row].length - 3; col++) {
+            if (
+                board[row][col] !== null &&
+                board[row][col] === board[row][col + 1] &&
+                board[row][col] === board[row][col + 2] &&
+                board[row][col] === board[row][col + 3]
+            ) {
+                console.log(`${board[row][col]} wins horizontally!`);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function checkVertical(): boolean {
+    for (let col = 0; col < board.length; col++) {
+        for (let row = 0; row < board.length - 3; row++) {
+            if (
+                board[row][col] !== null &&
+                board[row][col] === board[row + 1][col] &&
+                board[row][col] === board[row + 2][col] &&
+                board[row][col] === board[row + 3][col]
+            ) {
+                console.log(`${board[row][col]} wins vertically!`);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function checkDiagonal(): boolean {
+    // Check for downward-right diagonal
+    for (let row = 0; row < board.length - 3; row++) {
+        for (let col = 0; col < board[row].length - 3; col++) {
+            if (
+                board[row][col] !== null &&
+                board[row][col] === board[row + 1][col + 1] &&
+                board[row][col] === board[row + 2][col + 2] &&
+                board[row][col] === board[row + 3][col + 3]
+            ) {
+                console.log(`${board[row][col]} wins diagonally (down-right)!`);
+                return true;
+            }
+        }
+    }
+
+    // Check for upward-right diagonal 
+    for (let row = 3; row < board.length; row++) {
+        for (let col = 0; col < board[row].length - 3; col++) {
+            if (
+                board[row][col] !== null &&
+                board[row][col] === board[row - 1][col + 1] &&
+                board[row][col] === board[row - 2][col + 2] &&
+                board[row][col] === board[row - 3][col + 3]
+            ) {
+                console.log(`${board[row][col]} wins diagonally (up-right)!`);
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
 
 
 // Add click listeners to each cell
