@@ -82,6 +82,15 @@ function handleCellClick(event: MouseEvent): void {
                 return; // Stop further clicks
             }
 
+            // Check for a draw (only if no one has won)
+            if (checkDraw()) {
+                gameOver = true;
+                setTimeout(() => {
+                    alert("It's a draw!");
+                }, 100);
+                return;
+            }
+
             // Switch to the next player's turn
             currentPlayer = currentPlayer === "Player 1" ? "Player 2" : "Player 1";
             updateTurnIndicator();
@@ -162,6 +171,19 @@ function checkDiagonal(): boolean {
     }
 
     return false;
+}
+
+function checkDraw(): boolean {
+
+    // Check if any cell in the board is still empty (null)
+    for(let row = 0; row < board.length; row++) {
+        for (let col = 0; col < board[row].length; col++) {
+            if (board[row][col] === null) {
+                return false; // Meaning the board is not full
+            }
+        }
+    }
+    return true; // Meaning the board is full
 }
 
 
