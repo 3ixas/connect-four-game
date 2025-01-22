@@ -34,14 +34,21 @@ if (!gameBoard) {
 const board: (null | string) [] [] = Array.from({ length: 6}, () => Array(7).fill(null));
 
 function handleCellClick(event: MouseEvent): void {
-    const target = event.target as HTMLElement;
+    const target = (event.target as HTMLElement).closest(".cell");
+    if (!target) {
+        console.error("Click did not hit a valid cell.");
+        return;
+    }
 
-    // Ensure the click is on a valid cell
-    if (!target.classList.contains("cell")) return;
+    // Debug clicked cell's data attributes
+    console.log("Clicked Cell Attributes:", {
+        "data-row": target.dataset.row,
+        "data-col": target.dataset.col,
+    });
 
-    // Get the column index from the clicked cell's data attribute
-    const col = parseInt(target.dataset.col!); // Use `data-col` directly (1-based)
-    console.log("Clicked Column (data-col):", col); // Debugging
+    // Parse column index from clicked cell's `data-col` attribute
+    const col = parseInt(target.dataset.col!); // 1-based index
+    console.log("Clicked Column (data-col):", col);
 
     // Find the lowest empty row in the clicked column
     for (let row = board.length - 1; row >= 0; row--) { // Start from the bottom row
@@ -49,13 +56,18 @@ function handleCellClick(event: MouseEvent): void {
             // Update the game board array
             board[row][col - 1] = currentPlayer;
 
-            // Update the DOM (adjust for 1-based `data-row` values in HTML)
+            // Query the corresponding DOM element
             const cell = document.querySelector(`[data-row="${row + 1}"][data-col="${col}"]`);
             console.log(`Checking Row: ${row + 1}, Column: ${col}`); // Debugging
-            console.log("Cell Found:", cell); // Debugging
-            if (cell) {
-                cell.classList.add(currentPlayer === "Player 1" ? "player1" : "player2");
+            console.log("Cell Found:", cell);
+
+            if (!cell) {
+                console.error(`Error: Could not find cell with data-row="${row + 1}" and data-col="${col}"`);
+                return;
             }
+
+            // Add class to visually represent the player's piece
+            cell.classList.add(currentPlayer === "Player 1" ? "player1" : "player2");
 
             // Switch to the next player's turn
             currentPlayer = currentPlayer === "Player 1" ? "Player 2" : "Player 1";
@@ -64,6 +76,8 @@ function handleCellClick(event: MouseEvent): void {
         }
     }
 }
+
+
 
 // Add click listeners to each cell
 function setupCellListeners(): void {
