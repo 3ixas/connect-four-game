@@ -3,8 +3,6 @@ import '../styles/style.scss';
 // Selecting the player turn indicator and restart button
 const turnIndicator = document.getElementById("turn-indicator")!; // Finds the <p> element with the turn-indicator id & the '!' lets TS know these elements exist and are not null
 
-const restartButton = document.getElementById("restart-btn")!; // Finds the <button> element with the restart-btn id
-
 // Tracking the current player
 let currentPlayer = "Player 1";
 
@@ -14,15 +12,32 @@ function updateTurnIndicator(): void { // Declares the function & void means the
     turnIndicator.style.color = currentPlayer === "Player 1" ? "#007bff" : "#ffcc00"; // Blue for player 1 and yellow for player 2
 }
 
-// Event listener for the restart button
-restartButton.addEventListener("click", () => {
-    currentPlayer = "Player 1"; // Reset to player 1
-    updateTurnIndicator(); // Calls this function to update the turn indicator text and colour
-    console.log("Game Restarted!"); // Debug message for now
+const restartButton = document.getElementById("restart-btn"); // Assume this is the button's ID
+
+restartButton?.addEventListener("click", () => {
+    console.log("Restarting the game..."); // Debugging
+
+    // Reset the board array
+    for (let row = 0; row < board.length; row++) {
+        for (let col = 0; col < board[row].length; col++) {
+            board[row][col] = null;
+        }
+    }
+    console.log("Game board array reset:", board); // Debugging
+
+    // Reset the DOM grid
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => {
+        cell.classList.remove("player1", "player2");
+    });
+    console.log("Visual board reset."); // Debugging
+
+    // Reset current player to Player 1
+    currentPlayer = "Player 1";
+    updateTurnIndicator();
+    console.log("Player reset to Player 1."); // Debugging
 });
 
-// This should run this function automatically on the page loading
-updateTurnIndicator();
 
 // Select the game board element
 const gameBoard = document.getElementById("game-board");
@@ -34,7 +49,7 @@ if (!gameBoard) {
 const board: (null | string) [] [] = Array.from({ length: 6}, () => Array(7).fill(null));
 
 function handleCellClick(event: MouseEvent): void {
-    const target = (event.target as HTMLElement).closest(".cell");
+    const target = (event.target as HTMLElement).closest(".cell") as HTMLElement;
     if (!target) {
         console.error("Click did not hit a valid cell.");
         return;
