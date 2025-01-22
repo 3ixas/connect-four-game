@@ -1,5 +1,8 @@
 import '../styles/style.scss';
 
+// Setting a global variable for the game being over with the gameOver flag
+let gameOver = false;
+
 // Selecting the player turn indicator and restart button
 const turnIndicator = document.getElementById("turn-indicator")!; // Finds the <p> element with the turn-indicator id & the '!' lets TS know these elements exist and are not null
 
@@ -16,6 +19,7 @@ const restartButton = document.getElementById("restart-btn"); // Assume this is 
 
 restartButton?.addEventListener("click", () => {
     console.log("Restarting the game..."); // Debugging
+    gameOver = false;
 
     // Reset the board array
     for (let row = 0; row < board.length; row++) {
@@ -49,6 +53,10 @@ if (!gameBoard) {
 const board: (null | string) [] [] = Array.from({ length: 6}, () => Array(7).fill(null));
 
 function handleCellClick(event: MouseEvent): void {
+
+    // Prevent further input if the game is over
+    if (gameOver) return;
+
     const target = (event.target as HTMLElement).closest(".cell") as HTMLElement;
     if (!target) {
         console.error("Click did not hit a valid cell.");
@@ -67,6 +75,7 @@ function handleCellClick(event: MouseEvent): void {
 
             // Check for a win
             if (checkWin()) {
+                gameOver = true;
                 setTimeout(() => {
                     alert(`${currentPlayer} wins!`);
                 }, 100); // Delay of 100ms to allow the DOM to update
