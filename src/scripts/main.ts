@@ -67,7 +67,9 @@ function handleCellClick(event: MouseEvent): void {
 
             // Check for a win
             if (checkWin()) {
-                alert(`${currentPlayer} wins!`);
+                setTimeout(() => {
+                    alert(`${currentPlayer} wins!`);
+                }, 100); // Delay of 100ms to allow the DOM to update
                 return; // Stop further clicks
             }
 
