@@ -101,3 +101,15 @@
         font-size: 18px; // Increasing the font for the larger screen sizing
     }
 }
+
+// Styling for Player 1 (blue piece)
+.player1 {
+    background-color: #007bff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+// Styling for Player 2 (yellow piece)
+.player2 {
+    background-color: #ffcc00;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
