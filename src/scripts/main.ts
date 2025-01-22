@@ -55,34 +55,21 @@ function handleCellClick(event: MouseEvent): void {
         return;
     }
 
-    // Debug clicked cell's data attributes
-    console.log("Clicked Cell Attributes:", {
-        "data-row": target.dataset.row,
-        "data-col": target.dataset.col,
-    });
-
-    // Parse column index from clicked cell's `data-col` attribute
-    const col = parseInt(target.dataset.col!); // 1-based index
-    console.log("Clicked Column (data-col):", col);
-
-    // Find the lowest empty row in the clicked column
+    const col = parseInt(target.dataset.col!); // Get clicked column
     for (let row = board.length - 1; row >= 0; row--) { // Start from the bottom row
-        if (board[row][col - 1] === null) { // Subtract 1 for 0-based indexing
-            // Update the game board array
-            board[row][col - 1] = currentPlayer;
+        if (board[row][col - 1] === null) {
+            board[row][col - 1] = currentPlayer; // Update the board array
 
-            // Query the corresponding DOM element
             const cell = document.querySelector(`[data-row="${row + 1}"][data-col="${col}"]`);
-            console.log(`Checking Row: ${row + 1}, Column: ${col}`); // Debugging
-            console.log("Cell Found:", cell);
-
-            if (!cell) {
-                console.error(`Error: Could not find cell with data-row="${row + 1}" and data-col="${col}"`);
-                return;
+            if (cell) {
+                cell.classList.add(currentPlayer === "Player 1" ? "player1" : "player2");
             }
 
-            // Add class to visually represent the player's piece
-            cell.classList.add(currentPlayer === "Player 1" ? "player1" : "player2");
+            // Check for a win
+            if (checkWin()) {
+                alert(`${currentPlayer} wins!`);
+                return; // Stop further clicks
+            }
 
             // Switch to the next player's turn
             currentPlayer = currentPlayer === "Player 1" ? "Player 2" : "Player 1";
@@ -91,6 +78,7 @@ function handleCellClick(event: MouseEvent): void {
         }
     }
 }
+
 
 function checkWin(): boolean {
     // Checking for a horizontal, vertical, and diagonal win
