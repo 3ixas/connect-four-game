@@ -68,10 +68,23 @@
 
 // Styling for the player turn indicator
 #turn-indicator {
-    font-size: 18px; // Makes the text more readable on mobile
+    font-size: 1.2rem; // Makes the text more readable on mobile
     font-weight: bold; // Puts emphasis on the turn indicator
+    text-align: center; // Aligns text to the centre
+    margin: 1rem 0;
     margin-bottom: 10px; // Adds space between the text and the restart button
     color: #007bff; // Default color for player 1
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &.player1-turn {
+            color: #007bff;
+            transform: scale(1.1);
+        }
+    
+    &.player2-turn {
+        color: #ffcc00;
+        transform: scale(1.1);
+    }
 }
 
 // Styling for the restart button
@@ -92,7 +105,7 @@
     background-color: #e63939; // Slightly darkens the red background when hovering over
 } 
 
-// Styling for tablet and desktop for the controls
+// Styling for tablet for the controls
 @media (min-width: 768px) {
     .controls {
         flex-direction: row; // Arranges the  controls horizontally as there is more width than mobile
@@ -101,11 +114,32 @@
     }
 
     #turn-indicator {
-        font-size: 20px; // Increasing the font for the larger screen sizing
+        font-size: 1.5rem; // Increasing the font for the larger screen sizing
+        margin: 1.5rem 0.5rem;
     }
 
     #restart-btn {
-        font-size: 18px; // Increasing the font for the larger screen sizing
+        font-size: 1.4rem; // Increasing the font for the larger screen sizing
+        margin: 1.5rem 0.5rem;
+    }
+}
+
+// Styling for desktop for the controls
+@media (min-width: 1024px) {
+    .controls {
+        flex-direction: row; // Arranges the  controls horizontally as there is more width than mobile
+        justify-content: space-between; // Adds space between the Player indicator and restart button
+        margin-top: 30px;
+    }
+
+    #turn-indicator {
+        font-size: 2rem; // Increasing the font for the larger screen sizing
+        margin: 2rem 1rem;
+    }
+
+    #restart-btn {
+        font-size: 1.9rem; // Increasing the font for the larger screen sizing
+        margin: 2rem 1rem;
     }
 }
 

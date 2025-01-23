@@ -10,9 +10,20 @@ const turnIndicator = document.getElementById("turn-indicator")!; // Finds the <
 let currentPlayer = "Player 1";
 
 // Function to update the turn indicator
-function updateTurnIndicator(): void { // Declares the function & void means the function does not return anything, just performs the actions below
-    turnIndicator.textContent = `${currentPlayer}'s Turn`; // Updated the player indicator with the current player
-    turnIndicator.style.color = currentPlayer === "Player 1" ? "#007bff" : "#ffcc00"; // Blue for player 1 and yellow for player 2
+// Declares the function & void means the function does not return anything, just performs the actions below
+function updateTurnIndicator(): void {
+    const turnIndicator = document.getElementById("turn-indicator");
+    if (!turnIndicator) return;
+
+    if (currentPlayer === "Player 1") {
+        turnIndicator.textContent = "Player 1's Turn";
+        turnIndicator.classList.add("player1-turn");
+        turnIndicator.classList.remove("player2-turn");
+    } else {
+        turnIndicator.textContent = "Player 2's Turn";
+        turnIndicator.classList.add("player2-turn");
+        turnIndicator.classList.remove("player1-turn");
+    }
 }
 
 const restartButton = document.getElementById("restart-btn"); // Assume this is the button's ID
