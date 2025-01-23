@@ -120,3 +120,18 @@
     background-color: #ffcc00;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.winning-cell {
+    animation: glow 1s infinite;
+    border: 3px solid gold;
+    box-shadow: 0 0 15px gold;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px gold;
+    }
+    50% {
+        box-shadow: 0 0 30px gold;
+    }
+}

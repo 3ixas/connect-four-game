@@ -114,6 +114,14 @@ function checkHorizontal(): boolean {
                 board[row][col] === board[row][col + 2] &&
                 board[row][col] === board[row][col + 3]
             ) {
+
+                // Highlight the winning cells
+                for (let i = 0; i < 4; i++) {
+                    const cell = document.querySelector(
+                        `[data-row="${row + 1}"][data-col="${col + 1 + i}"]`
+                    );
+                    cell?.classList.add("winning-cell");
+                }
                 console.log(`${board[row][col]} wins horizontally!`);
                 return true;
             }
@@ -131,6 +139,13 @@ function checkVertical(): boolean {
                 board[row][col] === board[row + 2][col] &&
                 board[row][col] === board[row + 3][col]
             ) {
+                // Highlight the winning cells
+                for (let i = 0; i < 4; i++) {
+                    const cell = document.querySelector(
+                        `[data-row="${row + 1 + i}"][data-col="${col + 1}"]`
+                    );
+                    cell?.classList.add("winning-cell");
+                }
                 console.log(`${board[row][col]} wins vertically!`);
                 return true;
             }
@@ -149,6 +164,13 @@ function checkDiagonal(): boolean {
                 board[row][col] === board[row + 2][col + 2] &&
                 board[row][col] === board[row + 3][col + 3]
             ) {
+                // Highlight the winning cells
+                for (let i = 0; i < 4; i++) {
+                    const cell = document.querySelector(
+                        `[data-row="${row + 1 + i}"][data-col="${col + 1 + i}"]`
+                    );
+                    cell?.classList.add("winning-cell");
+                }
                 console.log(`${board[row][col]} wins diagonally (down-right)!`);
                 return true;
             }
@@ -164,6 +186,14 @@ function checkDiagonal(): boolean {
                 board[row][col] === board[row - 2][col + 2] &&
                 board[row][col] === board[row - 3][col + 3]
             ) {
+                // Highlight the winning cells
+                for (let i = 0; i < 4; i++) {
+                    const cell = document.querySelector(
+                        `[data-row="${row + 1 - i}"][data-col="${col + 1 + i}"]`
+                    );
+                    cell?.classList.add("winning-cell");
+                }
+
                 console.log(`${board[row][col]} wins diagonally (up-right)!`);
                 return true;
             }
