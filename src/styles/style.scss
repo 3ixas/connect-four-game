@@ -216,3 +216,23 @@
         box-shadow: 0 0 75px rgb(127, 255, 47);
     }
 }
+
+/* Player 1-specific hover effect for the entire column */
+.hover-player1 {
+    background-color: rgba(0, 123, 255, 0.3);
+    /* Light blue background for Player 1 */
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Player 2-specific hover effect for the entire column */
+.hover-player2 {
+    background-color: rgba(255, 204, 0, 0.3);
+    /* Light yellow background for Player 2 */
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Remove existing hover styles */
+.cell:hover {
+    background-color: lightgrey;
+    /* Ensure no default hover colour */
+}

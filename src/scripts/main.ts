@@ -105,6 +105,7 @@ function handleCellClick(event: MouseEvent): void {
             // Switch to the next player's turn
             currentPlayer = currentPlayer === "Player 1" ? "Player 2" : "Player 1";
             updateTurnIndicator();
+            updateHoverEffect();
             break;
         }
     }
@@ -238,3 +239,32 @@ function setupCellListeners(): void {
 
 // Initialise the game board
 setupCellListeners();
+
+function updateHoverEffect(): void {
+    // Remove previous hover effects from all cells
+    const allCells = document.querySelectorAll(".cell");
+    allCells.forEach(cell => cell.classList.remove("hover-player1", "hover-player2"));
+
+    // Add hover effect based on the current player
+    allCells.forEach(cell => {
+        cell.addEventListener("mouseover", (event) => {
+            const target = (event.target as HTMLElement).closest(".cell") as HTMLElement;
+            if (!target) return;
+
+            const col = target.dataset.col; // Get the column of the hovered cell
+            const columnCells = document.querySelectorAll(`.cell[data-col="${col}"]`);
+            columnCells.forEach(columnCell => {
+                columnCell.classList.add(currentPlayer === "Player 1" ? "hover-player1" : "hover-player2");
+            });
+        });
+
+        cell.addEventListener("mouseout", () => {
+            // Remove hover effect when the mouse leaves the cell
+            const allCells = document.querySelectorAll(".cell");
+            allCells.forEach(cell => cell.classList.remove("hover-player1", "hover-player2"));
+        });
+    });
+}
+
+// Call this function whenever the turn changes
+updateHoverEffect();
