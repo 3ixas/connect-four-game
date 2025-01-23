@@ -1,3 +1,7 @@
+.row {
+    display: contents;
+}
+
 // Mobile-first styling
 #game-board {
     display: grid;
@@ -9,7 +13,7 @@
     /* Consistent spacing between cells */
     width: 90vw;
     /* Ensure the grid scales properly on mobile */
-    max-width: 90vw;
+    max-width: 450px;
     /* Limit grid width to 90% of the viewport */
     aspect-ratio: 7 / 6;
     /* Maintain a 7:6 aspect ratio for the grid */
@@ -17,9 +21,7 @@
     /* Centre the grid horizontally */
 }
 
-.row {
-    display: contents;
-}
+
 
 .cell {
     width: 100%;
@@ -37,6 +39,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Subtle 3D effect */
     transition: background-color 0.3s ease;
+    max-width: 80px; /* Prevent cells from exceeding mobile size */
+    max-height: 80px;
 }
 
 // Tablet styling: larger grid and spacing
@@ -44,7 +48,7 @@
     #game-board {
         width: 85vw;
         /* Adjust grid width to 80% of the viewport */
-        max-width: 650px;
+        max-width: 450px;
         /* Cap the grid width for tablets */
         gap: 0.8rem;
         /* Increase spacing between cells */
@@ -53,13 +57,13 @@
     }
 
     .cell {
-        width: calc(80vw / 7);
+        width: 100%;
         /* Dynamically calculate width */
-        height: calc(80vw / 7);
+        height: 100%;
         /* Maintain square cells */
-        max-width: 85px;
+        max-width: 80px;
         /* Ensure cells don’t get too large */
-        max-height: 85px;
+        max-height: 80px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
         /* Slightly stronger shadow */
     }
@@ -68,9 +72,9 @@
 // Desktop layout: Even larger grid and spacing
 @media (min-width: 1024px) {
     #game-board {
-        width: 65vw;
+        width: 70vw;
         /* Adjust grid width to 60% of the viewport */
-        max-width: 800px;
+        max-width: 450px;
         /* Cap the grid width for desktops */
         gap: 1rem;
         /* Add more generous spacing */
@@ -79,13 +83,13 @@
     }
 
     .cell {
-        width: calc(60vw / 7);
+        width: 100%;
         /* Dynamically calculate width */
-        height: calc(60vw / 7);
+        height: 100%;
         /* Maintain square cells */
-        max-width: 100px;
+        max-width: 80px;
         /* Ensure cells don’t get too large */
-        max-height: 100px;
+        max-height: 80px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         /* Stronger shadow */
     }
@@ -97,6 +101,7 @@
     flex-direction: column; // Stacks items vertically for mobile
     align-items: center; // Aligns content to the centre
     margin-top: 20px; // Adds spacing between the controls and the game board
+    gap: 1rem;
 }
 
 // Styling for the player turn indicator
@@ -104,7 +109,7 @@
     font-size: 1.2rem; // Makes the text more readable on mobile
     font-weight: bold; // Puts emphasis on the turn indicator
     text-align: center; // Aligns text to the centre
-    margin: 1rem 0;
+    margin: 0;
     margin-bottom: 10px; // Adds space between the text and the restart button
     color: #007bff; // Default color for player 1
     transition: color 0.3s ease, transform 0.3s ease;
@@ -123,7 +128,7 @@
 // Styling for the restart button
 #restart-btn {
     padding: 10px 20px; // Adds extra padding to make it more clickable
-    font-size: 16px; // Makes the text more readable
+    font-size: 1.1rem; // Makes the text more readable
     font-weight: bold; // Emphasises the button
     background-color: #ff4d4d; // Bright red background for emphasis
     color: white; // Contrasts the text against the red background for better readability
@@ -140,39 +145,48 @@
 
 // Styling for tablet for the controls
 @media (min-width: 768px) {
+    .game {
+        display: flex; // Align game board and controls horizontally
+        justify-content: center; // Centre layout horizontally
+        align-items: flex-start; // Align controls to the top
+        gap: 3rem; // Add space between game board and controls
+    }
+
     .controls {
-        flex-direction: row; // Arranges the  controls horizontally as there is more width than mobile
-        justify-content: space-between; // Adds space between the Player indicator and restart button
-        margin-top: 30px;
+        display: flex;
+        flex-direction: column; // Stack turn indicator and button vertically
+        align-items: center; // Left-align for a natural layout
+        gap: 1rem; // Add spacing between turn indicator and button
     }
 
     #turn-indicator {
-        font-size: 1.5rem; // Increasing the font for the larger screen sizing
-        margin: 1.5rem 0.5rem;
+        font-size: 1.3rem; // Increasing the font for the larger screen sizing
+        margin: 0;
     }
 
     #restart-btn {
-        font-size: 1.4rem; // Increasing the font for the larger screen sizing
-        margin: 1.5rem 0.5rem;
+        font-size: 1.2rem; // Increasing the font for the larger screen sizing
+        padding: 10px 20px;
     }
 }
 
 // Styling for desktop for the controls
 @media (min-width: 1024px) {
+    .game {
+        gap: 3rem; // Increase spacing between game board and controls
+    }
+
     .controls {
-        flex-direction: row; // Arranges the  controls horizontally as there is more width than mobile
-        justify-content: space-between; // Adds space between the Player indicator and restart button
-        margin-top: 30px;
+        gap: 1.5rem; // Add more spacing between turn indicator and button
     }
 
     #turn-indicator {
-        font-size: 2rem; // Increasing the font for the larger screen sizing
-        margin: 2rem 1rem;
+        font-size: 1.4rem; // Larger font size for readability
     }
 
     #restart-btn {
-        font-size: 1.9rem; // Increasing the font for the larger screen sizing
-        margin: 2rem 1rem;
+        font-size: 1.3rem; // Larger button text for desktop
+        padding: 12px 24px; // Add more padding for a spacious feel
     }
 }
 
