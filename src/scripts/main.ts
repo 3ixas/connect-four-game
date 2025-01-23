@@ -32,7 +32,7 @@ restartButton?.addEventListener("click", () => {
     // Reset the DOM grid
     const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => {
-        cell.classList.remove("player1", "player2");
+        cell.classList.remove("player1", "player2", "winning-cell");
     });
     console.log("Visual board reset."); // Debugging
 
