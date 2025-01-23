@@ -1,14 +1,20 @@
 // Mobile-first styling
 #game-board {
     display: grid;
-    grid-template-rows: repeat(6, 40px);
-    // 7 equal columns that are 40px wide
-    grid-template-columns: repeat(7, 40px);
-    grid-gap: 5px;
-    // Horizontally centre the grid within its container
-    justify-content: center;
-    // Remove any default browser margins and centre the grid
+    grid-template-rows: repeat(6, 1fr);
+    /* Auto-fit rows */
+    grid-template-columns: repeat(7, 1fr);
+    /* Auto-fit columns */
+    gap: 0.5rem;
+    /* Consistent spacing between cells */
+    width: 90vw;
+    /* Ensure the grid scales properly on mobile */
+    max-width: 90vw;
+    /* Limit grid width to 90% of the viewport */
+    aspect-ratio: 7 / 6;
+    /* Maintain a 7:6 aspect ratio for the grid */
     margin: 0 auto;
+    /* Centre the grid horizontally */
 }
 
 .row {
@@ -16,45 +22,72 @@
 }
 
 .cell {
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    /* Take the full width of the grid cell */
+    height: 100%;
+    /* Maintain square aspect ratio */
     background-color: lightgrey;
     border-radius: 50%;
-    // Using flex to centre the player pieces inside the cell
+    /* Circular shape */
     display: flex;
-    justify-content: center; // Horizontally align the content
-    align-items: center; // Vertically align the content
-    // Add a subtle shadow inside the cell for a 3D effect
+    justify-content: center;
+    /* Centre content horizontally */
+    align-items: center;
+    /* Centre content vertically */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle 3D effect */
+    transition: background-color 0.3s ease;
 }
 
 // Tablet styling: larger grid and spacing
 @media (min-width: 768px) {
     #game-board {
-        grid-template-rows: repeat(6, 60px);
-        grid-template-columns: repeat(7, 60px); // Increasing the cell size
-        grid-gap: 8px; // More spacing between cells
+        width: 85vw;
+        /* Adjust grid width to 80% of the viewport */
+        max-width: 650px;
+        /* Cap the grid width for tablets */
+        gap: 0.8rem;
+        /* Increase spacing between cells */
+        aspect-ratio: 7 / 6;
+        /* Maintain aspect ratio */
     }
 
     .cell {
-        width: 60px; // Increasing cell width
-        height: 60px; // Increasing cell height
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); // Slightly stronger shadow
+        width: calc(80vw / 7);
+        /* Dynamically calculate width */
+        height: calc(80vw / 7);
+        /* Maintain square cells */
+        max-width: 85px;
+        /* Ensure cells don’t get too large */
+        max-height: 85px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        /* Slightly stronger shadow */
     }
 }
 
 // Desktop layout: Even larger grid and spacing
 @media (min-width: 1024px) {
     #game-board {
-        grid-template-rows: repeat(6, 80px);
-        grid-template-columns: repeat(7, 80px); // Increase the cell size further
-        grid-gap: 10px; // Even more spacing between cells
+        width: 65vw;
+        /* Adjust grid width to 60% of the viewport */
+        max-width: 800px;
+        /* Cap the grid width for desktops */
+        gap: 1rem;
+        /* Add more generous spacing */
+        aspect-ratio: 7 / 6;
+        /* Maintain aspect ratio */
     }
 
     .cell {
-        width: 80px; // larger cells for desktop
-        height: 80px;
+        width: calc(60vw / 7);
+        /* Dynamically calculate width */
+        height: calc(60vw / 7);
+        /* Maintain square cells */
+        max-width: 100px;
+        /* Ensure cells don’t get too large */
+        max-height: 100px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Stronger shadow */
     }
 }
 
