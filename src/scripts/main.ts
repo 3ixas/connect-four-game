@@ -88,7 +88,7 @@ function handleCellClick(event: MouseEvent): void {
             if (checkWin()) {
                 gameOver = true;
                 setTimeout(() => {
-                    alert(`${currentPlayer} wins!`);
+                    showModal(`${currentPlayer} wins!`);
                 }, 100); // Delay of 100ms to allow the DOM to update
                 return; // Stop further clicks
             }
@@ -97,7 +97,7 @@ function handleCellClick(event: MouseEvent): void {
             if (checkDraw()) {
                 gameOver = true;
                 setTimeout(() => {
-                    alert("It's a draw!");
+                    showModal("It's a draw!");
                 }, 100);
                 return;
             }
@@ -240,6 +240,26 @@ function setupCellListeners(): void {
 // Initialise the game board
 setupCellListeners();
 
+// Function to show the modal with a custom message
+function showModal(message: string): void {
+    const modal = document.getElementById("result-modal") as HTMLElement;
+    const messageElement = document.getElementById("result-message") as HTMLElement;
+    const closeButton = document.getElementById("close-modal-btn") as HTMLElement;
+
+    // Set the message text
+    messageElement.textContent = message;
+
+    // Show the modal
+    modal.classList.remove("hidden");
+    modal.classList.add("show");
+
+    // Add event listener to close the modal
+    closeButton.addEventListener("click", () => {
+        modal.classList.remove("show");
+        modal.classList.add("hidden");
+    });
+}
+
 function updateHoverEffect(): void {
     // Remove previous hover effects from all cells
     const allCells = document.querySelectorAll(".cell");
@@ -254,17 +274,24 @@ function updateHoverEffect(): void {
             const col = target.dataset.col; // Get the column of the hovered cell
             const columnCells = document.querySelectorAll(`.cell[data-col="${col}"]`);
             columnCells.forEach(columnCell => {
-                columnCell.classList.add(currentPlayer === "Player 1" ? "hover-player1" : "hover-player2");
+                const row = parseInt((columnCell as HTMLElement).dataset.row!);
+
+                // Check if the cell is empty
+                if (board[row - 1][parseInt(col!) - 1] === null) {
+                    columnCell.classList.add(
+                        currentPlayer === "Player 1" ? "hover-player1" : "hover-player2"
+                    );
+                }
             });
         });
 
         cell.addEventListener("mouseout", () => {
-            // Remove hover effect when the mouse leaves the cell
+            // Remove hover effect when the mouse leaves the column
             const allCells = document.querySelectorAll(".cell");
             allCells.forEach(cell => cell.classList.remove("hover-player1", "hover-player2"));
         });
     });
 }
 
-// Call this function whenever the turn changes
-updateHoverEffect();
+// // Call this function whenever the turn changes
+// updateHoverEffect();
