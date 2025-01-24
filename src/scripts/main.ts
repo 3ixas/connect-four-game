@@ -12,7 +12,7 @@ let currentPlayer = "Player 1";
 // Function to update the turn indicator
 // Declares the function & void means the function does not return anything, just performs the actions below
 function updateTurnIndicator(): void {
-    const turnIndicator = document.getElementById("turn-indicator");
+    // const turnIndicator = document.getElementById("turn-indicator");
     if (!turnIndicator) return;
 
     if (currentPlayer === "Player 1") {
