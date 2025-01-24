@@ -263,12 +263,6 @@ body {
     transition: background-color 0.2s ease-in-out;
 }
 
-/* Remove existing hover styles */
-.cell:hover {
-    background-color: lightgrey;
-    /* Ensure no default hover colour */
-}
-
 /* Modal container */
 .modal {
     position: fixed;
