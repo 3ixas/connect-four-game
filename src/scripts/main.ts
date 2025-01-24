@@ -12,7 +12,6 @@ let currentPlayer = "Player 1";
 // Function to update the turn indicator
 // Declares the function & void means the function does not return anything, just performs the actions below
 function updateTurnIndicator(): void {
-    // const turnIndicator = document.getElementById("turn-indicator");
     if (!turnIndicator) return;
 
     if (currentPlayer === "Player 1") {
@@ -292,6 +291,28 @@ function updateHoverEffect(): void {
         });
     });
 }
+
+// Detect when a cell is touched on a mobile device
+const cells = document.querySelectorAll(".cell");
+
+cells.forEach((cell) => {
+    cell.addEventListener("touchstart", () => {
+        // Remove hover effects from all cells
+        cells.forEach((cell) => cell.classList.remove("hover-player1", "hover-player2"));
+    });
+
+    cell.addEventListener("touchend", () => {
+        const col = cell.getAttribute("data-col");
+        const columnCells = document.querySelectorAll(`.cell[data-col="${col}"]`);
+
+        // Apply hover effect for empty cells in the column
+        columnCells.forEach((columnCell) => {
+            if (!columnCell.classList.contains("player1") && !columnCell.classList.contains("player2")) {
+                columnCell.classList.add(currentPlayer === "Player 1" ? "hover-player1" : "hover-player2");
+            }
+        });
+    });
+});
 
 // // Call this function whenever the turn changes
 // updateHoverEffect();
