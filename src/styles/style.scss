@@ -2,7 +2,8 @@ body {
     font-family: 'Arial', sans-serif; /* Default font for the entire page */
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ff7e5f, #6a3093); /* Vibrant orange-to-purple gradient */
+    background: linear-gradient((135deg, #1e3c72, #2a5298)); /* Vibrant orange-to-purple gradient */
+    background-attachment: fixed;
     background-size: cover; /* Ensures the background covers the viewport */
     height: 100vh; /* Full-height background */
     display: flex;
@@ -156,7 +157,7 @@ body {
     padding: 10px 20px; // Adds extra padding to make it more clickable
     font-size: 1.1rem; // Makes the text more readable
     font-weight: bold; // Emphasises the button
-    background-color: #ff4d4d; // Bright red background for emphasis
+    background-color: #28a745; // Bright red background for emphasis
     color: white; // Contrasts the text against the red background for better readability
     border: none; // Cleaner look with no border
     border-radius: 5px; // Rounded corners
@@ -166,13 +167,13 @@ body {
 
 // Styling for the state of the button when hovering over
 #restart-btn:hover {
-    background-color: #e63939; // Slightly darkens the red background when hovering over
+    background-color: #218838; // Slightly darkens the red background when hovering over
     transform: scale(1.05); // Slight zoom effect
 } 
 
 /* Active state: bounce and pressed effect */
 #restart-btn:active {
-    background-color: #cc2e2e; /* Even darker red */
+    background-color: #1b6b2d; /* Even darker red */
     transform: scale(0.95); /* Slightly pressed effect */
     animation: buttonBounce 0.2s ease; /* Bounce animation */
 }
@@ -329,5 +330,4 @@ body {
     font-size: 1rem; /* Slightly smaller than body text */
     color: rgba(255, 255, 255, 0.7); /* Subtle white with transparency */
     font-style: italic; /* Add an elegant italicised style */
-    padding: 0.5rem 0; /* Add padding for breathing room */
 }

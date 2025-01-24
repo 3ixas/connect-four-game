@@ -88,7 +88,7 @@ function handleCellClick(event: MouseEvent): void {
             if (checkWin()) {
                 gameOver = true;
                 setTimeout(() => {
-                    showModal(`${currentPlayer} wins!`);
+                    showModal(`🏅 Victory for ${currentPlayer}! What a game! 🎉`);
                 }, 100); // Delay of 100ms to allow the DOM to update
                 return; // Stop further clicks
             }
@@ -97,7 +97,7 @@ function handleCellClick(event: MouseEvent): void {
             if (checkDraw()) {
                 gameOver = true;
                 setTimeout(() => {
-                    showModal("It's a draw!");
+                    showModal("😲 It’s a draw! Who will break the tie next time? 🤔");
                 }, 100);
                 return;
             }
