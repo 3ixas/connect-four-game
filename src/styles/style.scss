@@ -247,7 +247,7 @@ body {
 
 .hover-player1 {
     background-color: rgba(255, 38, 0, 0.257);
-    /* Slightly lighter blue for Player 1 */
+    /* Slightly lighter red for Player 1 */
     transition: background-color 0.2s ease-in-out;
 }
 
@@ -259,15 +259,8 @@ body {
 
 /* Remove existing hover styles */
 .cell:hover {
-    background-color: transparent;
+    background-color: lightgrey;
     /* Ensure no default hover colour */
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .cell:hover {
-        background-color: transparent;
-        /* Optional, only apply hover styles on non-touch devices */
-    }
 }
 
 /* Modal container */
