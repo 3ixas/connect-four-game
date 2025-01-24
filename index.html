@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Description for search engines -->
   <meta name="description" content="A dynamic and interactive Connect Four game built with HTML, SCSS, and TypeScript.">
+  <!-- Sets the title of the webpage -->
   <title>Connect Four</title>
 </head>
 <body>
-  <!-- Main container for the Connect Four game. Acts as the central container for the entire game layout. Ensures all elements are grouped and can be styled or repositioned easily.-->
+  <!-- Main container for the Connect Four game -->
   <div id="connect-four">
     
-    <!-- Header Section. Contains the game's title (header__title) and description (header__description). -->
+    <!-- Header section: Game title and description -->
     <header class="header">
       <h1 class="header__title">Connect Four</h1>
       <p class="header__description">A classic strategy game for two players. Connect four pieces of the same colour in a row to win!</p>
     </header>
 
-    <!-- Game board section. Placeholder for the actual game board. Kept very minimal as the game board will be dynamically generated through TypeScript. -->
+    <!-- Main game area -->
      <main class="game">
-      <!-- The game board grid will be dynamically generated through TypeScript -->
+      <!-- Game board (dynamically populated via TypeScript) -->
       <div class="game__board" id="game-board">
 
-        <!-- 'row' = represents a single row on the game board. 'cell' = represents a single slot in the row for a player piece. 'data-row' & 'data-col' = act as labels for the cells, making it easy to find and work with them for the game logic - i.e. checking if four pieces in a row have the same value etc. -->
+        <!-- Rows and cells for the Connect Four grid -->
         <div class="row" id="row-1">
+          <!-- Each div represents an individual cell within the first row -->
           <div class="cell" id="cell-1-1" data-row="1" data-col="1"></div>
           <div class="cell" id="cell-1-2" data-row="1" data-col="2"></div>
           <div class="cell" id="cell-1-3" data-row="1" data-col="3"></div>
@@ -32,6 +35,7 @@
           <div class="cell" id="cell-1-7" data-row="1" data-col="7"></div>
         </div>
 
+        <!-- Rows 2 through 6 follow the same structure -->
         <div class="row" id="row-2">
           <div class="cell" id="cell-2-1" data-row="2" data-col="1"></div>
           <div class="cell" id="cell-2-2" data-row="2" data-col="2"></div>
@@ -82,30 +86,37 @@
           <div class="cell" id="cell-6-7" data-row="6" data-col="7"></div>
         </div>
 
+        <!-- Result modal for displaying win/draw messages -->
         <div id="result-modal" class="modal hidden">
           <div class="modal-content">
-            <h2 id="result-message"></h2>
+            <h2 id="result-message"></h2> <!-- Displays the result message -->
+            <!-- Close button for the modal -->
             <button id="close-modal-btn" class="modal-btn">Close</button>
           </div>
         </div>
       </div>
      </main>
 
-     <!-- Game controls section. Will have the current player info and restart button displayed here -->
+     <!-- Game controls section -->
      <section class="controls">
-      <!-- Player turn indicator -->
+      <!-- Current player's turn indicator -->
       <div class="controls__player-info" id="player-info">
+        <!-- Displays whose turn it is -->
         <p id="turn-indicator">Player 1's Turn</p>
       </div>
+
+      <!-- Restart game button -->
       <button class="controls__restart-btn" id="restart-btn">Restart Game</button>
      </section>
 
-     <!-- Placeholder at the moment for potential addition of credits or links -->
+     <!-- Footer for credits -->
      <footer class="footer">
       <p>Created by Elias</p>
      </footer>
 
   </div>
 </body>
+
+<!--- Link to the main TypeScript file -->
 <script type="module" src="/src/scripts/main.ts"></script>
 </html>

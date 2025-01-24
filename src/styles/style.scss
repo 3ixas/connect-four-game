@@ -1,131 +1,81 @@
+// General styling for the entire page
 body {
-    font-family: 'Arial', sans-serif; /* Default font for the entire page */
-    margin: 0;
-    padding: 0;
-    background: linear-gradient((135deg, #1e3c72, #2a5298)); /* Vibrant orange-to-purple gradient */
-    background-attachment: fixed;
-    background-size: cover; /* Ensures the background covers the viewport */
-    height: 100vh; /* Full-height background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    color: #f1f1f1; /* Light text for better readability */
+    font-family: 'Arial', sans-serif; // Setting default font for the page
+    margin: 0; // Removes default margins
+    padding: 0; // Removes default padding
+    background: linear-gradient((135deg, #1e3c72, #2a5298)); // Blue gradient background
+    background-attachment: fixed; // Fixes the background in place when scrolling
+    background-size: cover; // Ensures the background covers the viewport
+    height: 100vh; // Full-height background
+    display: flex; // Flexbox to align content
+    flex-direction: column; // Stacks elements vertically
+    align-items: center; // Centres elements horizontally
+    justify-content: flex-start; // Aligns elements to the top
+    overflow-x: hidden; // Prevent horizontal scroll
 }
 
+// Header styling
 .header {
-    text-align: center;
-    margin-bottom: 2rem;
-    /* Adds space below the header */
+    text-align: center; // Centres the text
+    margin-bottom: 2rem; // Adds space below the header
 }
 
+// Styles for the title
 .header__title {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin: 0.5rem;
-    color: #ffffff; /* Bright white for clarity */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds depth and readability */
+    font-size: 2.5rem; // Sets a large font size
+    font-weight: bold; // Bold text for emphasis
+    text-align: center; // Centre the title for mobile-first
+    margin: 2rem; // Breathing room around the title
+    color: #ffffff; // Bright white for clarity
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); // Adds depth and readability
 }
 
+// Styles for the game description
 .header__description {
-    font-size: 1.1rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    margin: 0.5rem auto;
-    color: #f0f0f0; /* Soft white for a balanced look */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for readability */
-    max-width: 90%; /* Keeps the text wrapped for smaller screens */
-    font-style: italic;
-    margin-bottom: 1.2rem;
+    font-size: 1.1rem; // Smaller font size than title
+    font-family: Georgia, 'Times New Roman', Times, serif; // Different font purely for styling
+    text-align: center; // Centre aligned for mobile-first
+    margin: 2rem; // Breathing room around the description
+    color: #f0f0f0; // Soft white for a balanced look
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Adds a subtle shadow for readability
+    max-width: 90%; // Keeps the text wrapped for smaller screens
+    font-style: italic; // Purely for styling
 }
 
-// Mobile-first styling
+// Game board container styling
 #game-board {
-    display: grid;
-    grid-template-rows: repeat(6, 1fr); /* Auto-fit rows */
-    grid-template-columns: repeat(7, 1fr); /* Auto-fit columns */
-    gap: 0.5rem; /* Consistent spacing between cells */
-    width: 90vw; /* Ensure the grid scales properly on mobile */
-    max-width: 450px; /* Limit grid width to 90% of the viewport */
-    aspect-ratio: 7 / 6; /* Maintain a 7:6 aspect ratio for the grid */
-    margin: 1rem auto; /* Centre the grid horizontally */
-    background-color: #007bff; /* Dark background for the game board frame */
-    border: 10px solid #007bff; /* Black border to create the game board's edge */
-    border-radius: 15px; /* Slight rounding for a smoother, polished appearance */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Subtle 3D shadow effect for depth */
+    display: grid; // Use a grid layout
+    grid-template-rows: repeat(6, 1fr); // Creates 6 rows with equal height
+    grid-template-columns: repeat(7, 1fr); // Creates 7 columns with equal width
+    gap: 0.5rem; // Adds space between the cells so they don't bunch up
+    width: 70vw; // Sets game board width to 70% of the viewport so it doesn't take up too much screen on mobile 
+    max-width: 450px; // Caps the width for larger screens so the game board doesn't get too large
+    aspect-ratio: 7 / 6; // Helps maintain a 7:6 width to height ratio so the rows and columns don't move around
+    margin: 2rem auto; // Centre the grid horizontally
+    background-color: #007bff; // Blue game board to look like the classic connect four game board
+    border: 10px solid #007bff; // Thicker blue border for a more realistic game board look
+    border-radius: 15px; // rounded edges for a polished look
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); // Subtle 3D shadow effect for depth
 }
 
+// Individual rows inside the game board
 .row {
-    display: contents;
+    display: contents; // Ensures grid layout works correctly
 }
 
-
+// Individual cells inside the game baord
 .cell {
-    width: 100%; /* Take the full width of the grid cell */
-    height: 100%; /* Maintain square aspect ratio */
-    background-color: lightgrey;
-    border-radius: 50%; /* Circular shape */
-    display: flex;
-    justify-content: center; /* Centre content horizontally */
-    align-items: center; /* Centre content vertically */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle 3D effect */
-    transition: background-color 0.3s ease;
-    max-width: 80px; /* Prevent cells from exceeding mobile size */
-    max-height: 80px;
-}
-
-// Tablet styling: larger grid and spacing
-@media (min-width: 768px) {
-    #game-board {
-        width: 85vw;
-        /* Adjust grid width to 80% of the viewport */
-        max-width: 450px;
-        /* Cap the grid width for tablets */
-        gap: 0.8rem;
-        /* Increase spacing between cells */
-        aspect-ratio: 7 / 6;
-        /* Maintain aspect ratio */
-    }
-
-    .cell {
-        width: 100%;
-        /* Dynamically calculate width */
-        height: 100%;
-        /* Maintain square cells */
-        max-width: 80px;
-        /* Ensure cells don’t get too large */
-        max-height: 80px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-        /* Slightly stronger shadow */
-    }
-}
-
-// Desktop layout: Even larger grid and spacing
-@media (min-width: 1024px) {
-    #game-board {
-        width: 70vw;
-        /* Adjust grid width to 60% of the viewport */
-        max-width: 450px;
-        /* Cap the grid width for desktops */
-        gap: 1rem;
-        /* Add more generous spacing */
-        aspect-ratio: 7 / 6;
-        /* Maintain aspect ratio */
-    }
-
-    .cell {
-        width: 100%;
-        /* Dynamically calculate width */
-        height: 100%;
-        /* Maintain square cells */
-        max-width: 80px;
-        /* Ensure cells don’t get too large */
-        max-height: 80px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Stronger shadow */
-    }
+    width: 100%; // Makes cells fill the available width
+    height: 100%; // Matches the height to width for square cells
+    background-color: lightgrey; // Default colour with no player piece selection
+    border-radius: 50%; // Rounds corners for a circular shape
+    display: flex; // Centres content inside the cell
+    justify-content: center; // Centre cells horizontally
+    align-items: center; // Centre cells vertically so it's balanced
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); // Subtle 3D effect
+    transition: background-color 0.3s ease; // Smooth colour transition
+    max-width: 80px; // Keeps cells from stretching or squeezing horizontally on mobile
+    max-height: 80px; // Keeps cells from stretching or squeezing vertically on mobile
 }
 
 // Styling for the controls section with mobile-first design approach
@@ -133,8 +83,8 @@ body {
     display: flex; // Flexbox for aligning horizontally
     flex-direction: column; // Stacks items vertically for mobile
     align-items: center; // Aligns content to the centre
-    margin-top: 1.5rem; // Adds spacing between the controls and the game board
-    gap: 1rem;
+    margin: 2rem; // Adds spacing between the controls and game board and footer
+    gap: 1rem; // Adds space between controls
 }
 
 // Styling for the player turn indicator
@@ -142,192 +92,190 @@ body {
     font-size: 1.2rem; // Makes the text more readable on mobile
     font-weight: bold; // Puts emphasis on the turn indicator
     text-align: center; // Aligns text to the centre
-    margin: 0;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for default */
-    color: #ff4d4d; // Default color for player 1
-    transition: color 0.3s ease, transform 0.3s ease;
+    margin: 0; // Removes default margins
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); // Subtle shadow
+    color: #ff4d4d; // Red colour for Player 1
+    transition: color 0.3s ease, transform 0.3s ease; // Smooth transitions for hover
 
     &.player1-turn {
-            color: #ff4d4d;
-            transform: scale(1.1);
-        }
-    
+        color: #ff4d4d; // Sets red for Player 1
+        transform: scale(1.1); // Enlarges slightly
+    }
     &.player2-turn {
-        color: #ffcc00;
-        transform: scale(1.1);
+        color: #ffcc00; // Yellow for Player 2
+        transform: scale(1.1); // Enlarges slightly
     }
 }
 
-// Styling for the restart button
+// Restart button styling
 #restart-btn {
-    padding: 10px 20px; // Adds extra padding to make it more clickable
-    font-size: 1.1rem; // Makes the text more readable
-    font-weight: bold; // Emphasises the button
-    background-color: #28a745; // Bright red background for emphasis
-    color: white; // Contrasts the text against the red background for better readability
-    border: none; // Cleaner look with no border
-    border-radius: 5px; // Rounded corners
-    cursor: pointer; // Cursor will change to a pointer when hovering over to make it more obvious that it is a button
-    transition: background-color 0.3s ease; // Should add an effect when hovering over
+    padding: 10px 20px; // Adds padding for a clickable area
+    font-size: 1.1rem; // Readable font size
+    font-weight: bold; // Emphasises the button text
+    background-color: #28a745; // Green background for contrast
+    color: white; // White text for readability
+    border: none; // Removes border for a clean look
+    border-radius: 5px; // Rounds the corners
+    cursor: pointer; // Changes cursor to pointer on hover
+    transition: background-color 0.3s ease; // Smooth hover effect
 }
 
-// Styling for the state of the button when hovering over
 #restart-btn:hover {
-    background-color: #218838; // Slightly darkens the red background when hovering over
+    background-color: #218838; // Darker green on hover
     transform: scale(1.05); // Slight zoom effect
-} 
-
-/* Active state: bounce and pressed effect */
-#restart-btn:active {
-    background-color: #1b6b2d; /* Even darker red */
-    transform: scale(0.95); /* Slightly pressed effect */
-    animation: buttonBounce 0.2s ease; /* Bounce animation */
 }
 
-/* Keyframes for bounce animation */
+#restart-btn:active {
+    background-color: #1b6b2d; // Even darker green when pressed
+    transform: scale(0.95); // Shrinks slightly for pressed effect
+}
+
+// Keyframes for bounce animation on the Restart button
 @keyframes buttonBounce {
     0%, 100% {
-        transform: scale(1); /* Normal size */
+        transform: scale(1); // Normal size at start and end
     }
     50% {
-        transform: scale(1.1); /* Slightly larger */
+        transform: scale(1.1); // Slightly larger in the middle of the animation
     }
 }
 
-// Styling for tablet for the controls
+// Tablet-specific styles for the controls section
 @media (min-width: 768px) {
     .controls {
-        display: flex;
-        flex-direction: column; // Stack turn indicator and button vertically
-        align-items: center; // Left-align for a natural layout
+        display: flex; // Flexbox layout
+        flex-direction: column; // Stack the turn indicator and button vertically
+        align-items: center; // Centre-align items
     }
 
     #turn-indicator {
-        font-size: 1.3rem; // Increasing the font for the larger screen sizing
-        margin: 0;
+        font-size: 1.3rem; // Slightly larger font size for readability on tablets
+        margin: 0; // Remove default margin
     }
 
     #restart-btn {
-        font-size: 1.2rem; // Increasing the font for the larger screen sizing
+        font-size: 1.2rem; // Larger button text for better visibility
     }
 }
 
-// Styling for desktop for the controls
+// Desktop-specific styles for the controls section
 @media (min-width: 1024px) {
     #turn-indicator {
-        font-size: 1.4rem; // Larger font size for readability
+        font-size: 1.4rem; // Increase font size for desktop screens
     }
 
     #restart-btn {
-        font-size: 1.3rem; // Larger button text for desktop
+        font-size: 1.3rem; // Larger font size for the Restart button
         padding: 12px 24px; // Add more padding for a spacious feel
     }
 }
 
-// Styling for Player 1 (blue piece)
+// Styling for Player 1's game piece
 .player1 {
-    background-color: #ff4d4d;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #ff4d4d; // Bright red for Player 1
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); // Adds an inner shadow for depth
 }
 
-// Styling for Player 2 (yellow piece)
+// Styling for Player 2's game piece
 .player2 {
-    background-color: #ffcc00;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #ffcc00; // Bright yellow for Player 2
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); // Adds an inner shadow for depth
 }
 
+// Animation for the winning cells
 .winning-cell {
-    animation: winningGlow 1.5s infinite;
-    border: 1.5px solid rgb(127, 255, 47);
-    box-shadow: 0 0 15px rgb(127, 255, 47);
+    animation: winningGlow 1.5s infinite; // Infinite glow animation
+    border: 1.5px solid rgb(127, 255, 47); // Bright green border for emphasis
+    box-shadow: 0 0 15px rgb(127, 255, 47); // Glowing effect around the cell
 }
 
+// Keyframes for the glow animation
 @keyframes winningGlow {
     0%, 100% {
-        box-shadow: 0 0 15px rgb(127, 255, 47);
+        box-shadow: 0 0 15px rgb(127, 255, 47); // Initial and final subtle glow
     }
     50% {
-        box-shadow: 0 0 75px rgb(127, 255, 47);
+        box-shadow: 0 0 75px rgb(127, 255, 47); // Intensified glow at the midpoint
     }
 }
 
+// Hover effect for Player 1's column
 .hover-player1 {
-    background-color: rgba(255, 38, 0, 0.257);
-    /* Slightly lighter red for Player 1 */
-    transition: background-color 0.2s ease-in-out;
+    background-color: rgba(255, 38, 0, 0.333); // Slightly lighter red for hover
+    transition: background-color 0.2s ease-in-out; // Smooth hover transition
 }
 
+// Hover effect for Player 2's column
 .hover-player2 {
-    background-color: rgba(255, 204, 0, 0.272);
-    /* Slightly lighter yellow for Player 2 */
-    transition: background-color 0.2s ease-in-out;
+    background-color: rgba(255, 204, 0, 0.449); // Slightly lighter yellow for hover
+    transition: background-color 0.2s ease-in-out; // Smooth hover transition
 }
 
-/* Modal container */
+// Modal container styling
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: fixed; // Fixes the modal in place on the screen
+    top: 0; // Aligns modal to the top
+    left: 0; // Aligns modal to the left
+    width: 100%; // Makes the modal span the full width
+    height: 100%; // Makes the modal span the full height
+    display: flex; // Flexbox layout for centring content
+    justify-content: center; // Centres the modal horizontally
+    align-items: center; // Centres the modal vertically
+    background-color: rgba(0, 0, 0, 0.7); // Dark overlay for focus
+    z-index: 1000; // Places the modal above all other elements
+    opacity: 0; // Initial hidden state
+    visibility: hidden; // Ensures it's not interactable when hidden
+    transition: opacity 0.3s ease, visibility 0.3s ease; // Smooth show/hide transitions
 }
 
-/* Modal content */
+// Modal content box styling
 .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: white; // White background for contrast
+    padding: 2rem; // Spacious padding for content
+    border-radius: 10px; // Rounded corners for a polished look
+    text-align: center; // Centre-aligns text
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
 }
 
-/* Result message */
+// Message displayed in the modal
 #result-message {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+    font-size: 1.5rem; // Large font for emphasis
+    margin-bottom: 1.5rem; // Adds space below the message
+    color: #333; // Neutral dark colour for clarity
 }
 
-/* Modal button */
+// Close button inside the modal
 .modal-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px; // Adds padding for a clickable area
+    font-size: 1rem; // Readable font size
+    background-color: #007bff; // Blue background for the button
+    color: white; // White text for contrast
+    border: none; // Removes default border
+    border-radius: 5px; // Rounds the corners
+    cursor: pointer; // Indicates interactivity
+    transition: background-color 0.3s ease; // Smooth hover transition
 }
 
 .modal-btn:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; // Darker blue on hover for effect
 }
 
-/* Show modal */
+// Show modal class
 .modal.show {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1; // Makes the modal visible
+    visibility: visible; // Ensures the modal is interactable
 }
 
-/* Hide modal */
+// Hide modal class
 .modal.hidden {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0; // Hides the modal
+    visibility: hidden; // Prevents interaction when hidden
 }
 
-/* Footer Styling */
+// Footer styling
 .footer {
-    text-align: center; /* Centre-align the footer content */
-    font-size: 1rem; /* Slightly smaller than body text */
-    color: rgba(255, 255, 255, 0.7); /* Subtle white with transparency */
-    font-style: italic; /* Add an elegant italicised style */
+    text-align: center; // Centre-aligns footer content
+    font-size: 1rem; // Slightly smaller font size
+    color: rgba(255, 255, 255, 0.7); // Subtle white with transparency
+    font-style: italic; // Footer suits an italic font style
 }
