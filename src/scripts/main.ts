@@ -227,7 +227,7 @@ function checkDraw(): boolean {
     return board.every(row => row.every(cell => cell !== null));
 }
 
-// ---------- UTILITIES ----------
+// ---------- HIGHLIGHT/HOVER EFFECTS ----------
 
 // Highlights the cells that form a winning combination.
 function highlightWinningCells(row: number, col: number, direction: "horizontal" | "vertical"): void {
