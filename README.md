@@ -21,33 +21,34 @@ This project was designed with a **mobile-first approach**, ensuring smooth game
 
 This project was developed with the following objectives in mind:
 
-- **Strengthen my understanding of TypeScript** and its role in frontend development.
-- **Improve my ability to structure larger projects** and apply modular code organisation.
-- **Enhance my knowledge of DOM manipulation** and event handling.
-- **Implement CSS animations** to improve user experience.
-- **Practice using Git and GitHub for version control** with meaningful commits.
+-   **Strengthen my understanding of TypeScript** and its role in frontend development.
+-   **Improve my ability to structure larger projects** and apply modular code organisation.
+-   **Enhance my knowledge of DOM manipulation** and event handling.
+-   **Implement CSS animations** to improve user experience.
+-   **Practice using Git and GitHub for version control** with meaningful commits.
 
 ## 🛠️ Technologies Used
 
-| Technology  | Purpose |
-|-------------|---------|
-| **HTML** | Provides the game’s structure and elements. |
-| **SCSS** | Styles the game board, elements, and animations. |
-| **TypeScript** | Handles the game logic, event listeners, and interactivity. |
-| **Git & GitHub** | Used for version control and project tracking. |
+| Technology       | Purpose                                                     |
+| ---------------- | ----------------------------------------------------------- |
+| **HTML**         | Provides the game’s structure and elements.                 |
+| **SCSS**         | Styles the game board, elements, and animations.            |
+| **TypeScript**   | Handles the game logic, event listeners, and interactivity. |
+| **Git & GitHub** | Used for version control and project tracking.              |
 
 ## 🏆 Future Improvements (Optional Features)
 
 These are features that I plan to implement in the future:
- 
+
 🔹 **Score tracking** – Keep track of player wins across multiple rounds  
 🔹 **Sound effects** – Feedback sounds for piece placement and game events  
 🔹 **AI Opponent** – Play against an AI for a single-player mode  
-🔹 **Multiplayer Mode** – Online play against other players  
+🔹 **Multiplayer Mode** – Online play against other players
 
 ---
 
 ## 📂 Project Structure
+
 ```
 📂 connect-four-game
 ┣ 📂 src
@@ -65,29 +66,35 @@ These are features that I plan to implement in the future:
 ┣ vite.config.js → (Vite setup for development & build)
 ┣ README.md → (This file)
 ```
+
 ---
 
 ## 🚀 How to Run the Game Locally
 
 ### 1️⃣ Clone the Repository
+
 ```
 git clone https://github.com/3ixas/connect-four-game.git
 ```
 
 ### 2️⃣ Navigate to the Project Folder
+
 ```
 cd connect-four-game
 ```
 
 ### 3️⃣ Install Dependencies
+
 ```
 npm install
 ```
 
 ### 4️⃣ Start the Development Server
+
 ```
 npm run dev
 ```
+
 _This will launch the game in your browser using Vite for a fast development experience._
 
 ## 🌍 Play the Game Online!
@@ -98,19 +105,22 @@ _This will launch the game in your browser using Vite for a fast development exp
 
 ### 💡 Key Takeaways
 
-- ✔ **TypeScript Understanding** – Strengthened understanding of types, interfaces, and event handling.
-- ✔ **DOM Manipulation** – Improved my ability to dynamically update elements and handle user interactions.
-- ✔ **CSS Animations & SCSS** – Enhanced my skills in styling and responsiveness for a polished UI.
-- ✔ **Game Logic Development** – Implemented core game mechanics like turn-based play, win conditions, and draws.
-- ✔ **Version Control Best Practices** – Used Git for proper project tracking and management.
+-   ✔ **TypeScript Understanding** – Strengthened understanding of types, interfaces, and event handling.
+-   ✔ **DOM Manipulation** – Improved my ability to dynamically update elements and handle user interactions.
+-   ✔ **CSS Animations & SCSS** – Enhanced my skills in styling and responsiveness for a polished UI.
+-   ✔ **Game Logic Development** – Implemented core game mechanics like turn-based play, win conditions, and draws.
+-   ✔ **Version Control Best Practices** – Used Git for proper project tracking and management.
 
-### 🤝 Contribution & Feedback
+## 🤝 Contribution & Feedback
 
 If you have suggestions, feedback, or want to contribute:
-1.	Fork the repository
-2.	Create a new branch (feature-idea)
-3.	Submit a Pull Request
+
+1. Fork the repository
+2. Create a new branch (feature-idea)
+3. Submit a Pull Request
 
 Any feedback is highly appreciated! 🎉
+
+---
 
 **Thank you for checking out my Connect Four Game! Hope you enjoy playing it as much as I enjoyed building it! 😊🔴🟡**
