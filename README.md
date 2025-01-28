@@ -69,17 +69,23 @@ These are features that I plan to implement in the future:
 
 ## 🚀 How to Run the Game Locally
 
-```sh
 ### 1️⃣ Clone the Repository
+```
 git clone https://github.com/3ixas/connect-four-game.git
+```
 
 ### 2️⃣ Navigate to the Project Folder
+```
 cd connect-four-game
+```
 
 ### 3️⃣ Install Dependencies
+```
 npm install
+```
 
 ### 4️⃣ Start the Development Server
+```
 npm run dev
 ```
 _This will launch the game in your browser using Vite for a fast development experience._
