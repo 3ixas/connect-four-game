@@ -1,33 +1,109 @@
-# connect-four-game
+# 🟡🔴 Connect Four Game
 
-## Project Overview
-This project is a browser-based implementation of the Connect Four game using HTML, SCSS, and TypeScript.
+A dynamic and interactive browser-based implementation of the **Connect Four** game, built with **HTML, SCSS, and TypeScript**. This project was developed as part of my learning journey in software development, focusing on game logic, DOM manipulation, and TypeScript best practices.
 
-## Project Goals
-- Build a fully functioning game of Connect Four.
-- Practice using Git and GitHub for version control and tracking meaningful changes
-- Improve my ability to scope and plan larger projects.
-- Apply concepts learnt so far during the _nology training in a practical project.
+## 🎮 About the Game
 
-## Game Description
-Connect Four is a two-player game where players take turns dropping their pieces (red or yellow) into a 6x7 grid. The objective is to connect four pieces of the same colour in a row either horizontally, vertically, or diagonally before your opponent manages to do the same. 
+**Connect Four** is a classic two-player strategy game where players take turns dropping coloured pieces into a **6x7 grid**. The goal is to be the first to connect **four pieces in a row**—either **horizontally, vertically, or diagonally**—before the opponent.
 
-## Key Features (in order of priority)
-- [x] A functional 6x7 grid for the game board.
-- [x] Turn-based gameplay for two players.
-- [x] Win condition logic for four consecutive pieces of the same colour in a line.
-- [x] Draw condition logic if the grid fills up with no winner.
-- [x] Mobile-first design.
+This project was designed with a **mobile-first approach**, ensuring smooth gameplay across different devices.
 
-## Optional Features (if time allows or for implementation in the future)
-- [x] Animations for piece placement.
-- [] Score tracking for multiple rounds consecutively played.
-- [] Sound effects for piece placement.
-- [x] Win/lose/draw notifications.
-- [] AI opponent for single-player mode.
+## ✨ Key Features
 
-## Technologies used
-- **HTML**: The structure of the game on the browser page.
-- **SCSS**: The styling and responsiveness of the page and game.
-- **TypeScript**: The implementation of the game logic and interactivity.
-- **Git/GitHub**: For version control
+✅ **Fully functional 6x7 game grid**  
+✅ **Turn-based two-player gameplay**  
+✅ **Win condition logic** – detects four connected pieces  
+✅ **Draw condition logic** – prevents infinite play  
+✅ **Mobile-responsive design** for seamless gameplay  
+✅ **Hover preview effect** – highlights the current column
+
+## 🎯 Project Goals
+
+This project was developed with the following objectives in mind:
+
+- **Strengthen my understanding of TypeScript** and its role in frontend development.
+- **Improve my ability to structure larger projects** and apply modular code organisation.
+- **Enhance my knowledge of DOM manipulation** and event handling.
+- **Implement CSS animations** to improve user experience.
+- **Practice using Git and GitHub for version control** with meaningful commits.
+
+## 🛠️ Technologies Used
+
+| Technology  | Purpose |
+|-------------|---------|
+| **HTML** | Provides the game’s structure and elements. |
+| **SCSS** | Styles the game board, elements, and animations. |
+| **TypeScript** | Handles the game logic, event listeners, and interactivity. |
+| **Git & GitHub** | Used for version control and project tracking. |
+
+## 🏆 Future Improvements (Optional Features)
+
+These are features that I plan to implement in the future:
+ 
+🔹 **Score tracking** – Keep track of player wins across multiple rounds  
+🔹 **Sound effects** – Feedback sounds for piece placement and game events  
+🔹 **AI Opponent** – Play against an AI for a single-player mode  
+🔹 **Multiplayer Mode** – Online play against other players  
+
+---
+
+## 📂 Project Structure
+📂 connect-four-game
+┣ 📂 src
+┃ ┣ 📂 assets → (Stores game assets like images or icons)
+┃ ┣ 📂 scripts → (Contains TypeScript logic)
+┃ ┃ ┣ main.ts → (Main game logic)
+┃ ┃ ┣ backup.ts → (Backup or alternative logic versions)
+┃ ┣ 📂 styles → (SCSS styling for game UI)
+┃ ┃ ┣ style.scss → (Main SCSS file)
+┃ ┣ global.d.ts → (TypeScript type definitions)
+┃ ┣ index.html → (Game interface)
+┣ 📂 dist → (Compiled output for deployment)
+┣ package.json → (Project dependencies)
+┣ tsconfig.json → (TypeScript configuration)
+┣ vite.config.js → (Vite setup for development & build)
+┣ README.md → (This file)
+
+---
+
+## 🚀 How to Run the Game Locally
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/3ixas/connect-four-game.git
+
+### 2️⃣ Navigate to the Project Folder
+cd connect-four-game
+
+### 3️⃣ Install Dependencies
+npm install
+
+### 4️⃣ Start the Development Server
+npm run dev
+```
+_This will launch the game in your browser using Vite for a fast development experience._
+
+## 🌍 Play the Game Online!
+
+🎮 Try the live version of the game: [Play Here](https://3ixas.github.io/connect-four-game/)
+
+## 🎓 Lessons Learned
+
+### 💡 Key Takeaways
+
+✔ **TypeScript Understanding** – Strengthened understanding of types, interfaces, and event handling.
+✔ **DOM Manipulation** – Improved my ability to dynamically update elements and handle user interactions.
+✔ **CSS Animations & SCSS** – Enhanced my skills in styling and responsiveness for a polished UI.
+✔ **Game Logic Development** – Implemented core game mechanics like turn-based play, win conditions, and draws.
+✔ **Version Control Best Practices** – Used Git for proper project tracking and management.
+
+### 🤝 Contribution & Feedback
+
+If you have suggestions, feedback, or want to contribute:
+	1.	Fork the repository
+	2.	Create a new branch (feature-idea)
+	3.	Submit a Pull Request
+
+Any feedback is highly appreciated! 🎉
+
+**Thank you for checking out my Connect Four Game! Hope you enjoy playing it as much as I enjoyed building it! 😊🔴🟡**
