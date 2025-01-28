@@ -68,8 +68,8 @@ These are features that I plan to implement in the future:
 
 ## 🚀 How to Run the Game Locally
 
-### 1️⃣ Clone the Repository
 ```sh
+### 1️⃣ Clone the Repository
 git clone https://github.com/3ixas/connect-four-game.git
 
 ### 2️⃣ Navigate to the Project Folder
@@ -91,18 +91,18 @@ _This will launch the game in your browser using Vite for a fast development exp
 
 ### 💡 Key Takeaways
 
-✔ **TypeScript Understanding** – Strengthened understanding of types, interfaces, and event handling.
-✔ **DOM Manipulation** – Improved my ability to dynamically update elements and handle user interactions.
-✔ **CSS Animations & SCSS** – Enhanced my skills in styling and responsiveness for a polished UI.
-✔ **Game Logic Development** – Implemented core game mechanics like turn-based play, win conditions, and draws.
-✔ **Version Control Best Practices** – Used Git for proper project tracking and management.
+- ✔ **TypeScript Understanding** – Strengthened understanding of types, interfaces, and event handling.
+- ✔ **DOM Manipulation** – Improved my ability to dynamically update elements and handle user interactions.
+- ✔ **CSS Animations & SCSS** – Enhanced my skills in styling and responsiveness for a polished UI.
+- ✔ **Game Logic Development** – Implemented core game mechanics like turn-based play, win conditions, and draws.
+- ✔ **Version Control Best Practices** – Used Git for proper project tracking and management.
 
 ### 🤝 Contribution & Feedback
 
 If you have suggestions, feedback, or want to contribute:
-	1.	Fork the repository
-	2.	Create a new branch (feature-idea)
-	3.	Submit a Pull Request
+1.	Fork the repository
+2.	Create a new branch (feature-idea)
+3.	Submit a Pull Request
 
 Any feedback is highly appreciated! 🎉
 
