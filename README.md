@@ -48,12 +48,13 @@ These are features that I plan to implement in the future:
 ---
 
 ## 📂 Project Structure
+```
 📂 connect-four-game
 ┣ 📂 src
 ┃ ┣ 📂 assets → (Stores game assets like images or icons)
 ┃ ┣ 📂 scripts → (Contains TypeScript logic)
 ┃ ┃ ┣ main.ts → (Main game logic)
-┃ ┃ ┣ backup.ts → (Backup or alternative logic versions)
+┃ ┃ ┣ backup.ts → (Backup logic version)
 ┃ ┣ 📂 styles → (SCSS styling for game UI)
 ┃ ┃ ┣ style.scss → (Main SCSS file)
 ┃ ┣ global.d.ts → (TypeScript type definitions)
@@ -63,7 +64,7 @@ These are features that I plan to implement in the future:
 ┣ tsconfig.json → (TypeScript configuration)
 ┣ vite.config.js → (Vite setup for development & build)
 ┣ README.md → (This file)
-
+```
 ---
 
 ## 🚀 How to Run the Game Locally
